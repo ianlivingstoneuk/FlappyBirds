@@ -1,0 +1,72 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.title {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    inset: 0;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.hide {
+    display: none;
+}
+
+.counter {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+}
+
+.bird {
+    --bird-size: 60px;
+    --bird-top: -1000;
+    position: absolute;
+    border-radius: 50%;
+    height: var(--bird-size);
+    width: var(--bird-size);
+    left: var(--bird-size);
+    top: calc(var(--bird-top) * 1px);
+}
+
+img {
+    width: 100%;
+}
+
+.pipes {
+    
+    --pipe-left: 100;
+    --hole-top: 150;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: calc(var(--pipe-width) * 1px);
+    left: calc(var(--pipe-left) * 1px);
+}
+
+.pipes > .segment {
+    position: absolute;
+    width: 100%;
+    background-color: chartreuse;
+}
+
+.pipes > .top {
+    top: 0;
+    bottom: calc(var(--hole-top) * 1px);
+}
+
+.pipes > .bottom {
+    bottom: 0;
+    top: calc(100vh - (var(--hole-top) * 1px) + calc(var(--hole-height) * 1px));
+}
